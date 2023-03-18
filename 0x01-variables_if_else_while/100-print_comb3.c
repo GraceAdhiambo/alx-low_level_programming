@@ -7,15 +7,15 @@ int main(void)
 {
 	int n, m;
 
-	for (n = 48; n <= 56; n++)
+	for (n = 0; n <= 9; n++)
 	{
-		for (m = 49; n <= 57; m++)
+		for (m = 1; m <= 9; m++)
 		{
-			if (m > n)
+			if (n < m && n != m)
 			{
-				putchar(n);
-				putchar(m);
-				if (n != 56 || m != 57)
+				putchar(n + '0');
+				putchar(m + '0');
+				if (n + m != 17)
 				{
 					putchar(',');
 					putchar(' ');
