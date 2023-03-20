@@ -1,26 +1,32 @@
 #include <stdio.h>
 /**
-  * main - this is the main function
-  * Return: always 0
+  * main - is the main function
+  * Return: retùrn 0 on success
   */
 int main(void)
 {
-	int a, b, c, d;
+	short a, b;
 
-	for (a = 0; a <= 9; a++)
+	for (a = 0; a <= 99; a++)
 	{
-		for (b = 0; b <= 9; b++)
+		for (b = 0; b <= 99; b++)
 		{
-			putchar(a + '0');
-			putchar(b + '0');
-			putchar(' ');
-			for (c = 0; c <= 9; c++)
+			if (a < b)
 			{
-				for (d = 1; d <= 9; d++)
+				short a1 = a / 10;
+				short a2 = a % 10;
+				short b1 = b / 10;
+				short b2 = b % 10;
+
+				putchar(a1 + '0');
+				putchar(a2 + '0');
+				putchar(' ');
+				putchar(b1 + '0');
+				putchar(b2 + '0');
+				if (a != 98 && b != 99)
 				{
-					putchar(c + '0');
-					putchar(d + '0');
 					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
