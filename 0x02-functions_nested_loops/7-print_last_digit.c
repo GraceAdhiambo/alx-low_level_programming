@@ -1,8 +1,8 @@
 #include "main.h"
 /**
   * print_last_digit - prints the last digit of a num
-  * @a: parameter
-  * Return: always b
+  * @i: parameter
+  * Return: always k
   */
 int print_last_digit(int i)
 {
