@@ -1,23 +1,50 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
-  * print_times_table - prints multiples of n
-  * @n: variable
-  * Return: always 0
+  * print_times_table - Prints a multiplication table
+  * @n: parameter
+  * Return: number value
   */
 void print_times_table(int n)
 {
-	int i, j;
-	int p;
+	int x, y, z;
 
-	for (i = 0; i <= n; i++)
+	if (n >= 0 && n <= 14)
 	{
-		for (j = 0; j <= n; j++)
+		for (x = 0; x <= n; x++)
 		{
-			p = i * j;
-			if (n <= 15 && n >= 0)
-				printf("  %d,", p);
+			for (y = 0; y <= n; y++)
+			{
+				z = x * y;
+				if (z > 99)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else if (z > 9)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else
+				{
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
+				}
+			}
+			_putchar('\n');
 		}
-		printf("\n");
 	}
 }
