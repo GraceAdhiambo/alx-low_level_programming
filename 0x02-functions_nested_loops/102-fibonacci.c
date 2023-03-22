@@ -1,24 +1,23 @@
 #include <stdio.h>
 /**
-  * main - prints the fibonacci series
-  * Result: always 0
+  * main - prints firs 50 numbers in fibonacci series
+  * Return: always 0
   */
 int main(void)
 {
-	int n1 = 1;
-	int n2 = 2;
-	int n3;
-	int count;
+	int fib1 = 1, fib2 = 2, fib3, num = 50, count = 0;
 
-	for (count = 3; count <= 50; count++)
+	printf("%d, ", fib1);
+	printf("%d, ", fib2);
+	count = 2; /* fib1 and fib2 are already used */
+	while (count < num)
 	{
-		n3 = n1 + n2;
-
-		printf("%d, %d, %d", n1, n2, n3);
+		fib3 = fib1 + fib2;
+		count++;
+		printf("%d, ", fib3);
+		fib1 = fib2;
+		fib2 = fib3;
 	}
-	for (n1 = n2 && n2 = n3)
-	{
-	printf("%d,", n3);
-	}
+	printf("\n");
 	return (0);
 }
