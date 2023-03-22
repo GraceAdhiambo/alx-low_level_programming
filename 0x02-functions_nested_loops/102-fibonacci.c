@@ -9,7 +9,7 @@ int main(void)
 
 	printf("%d, ", fib1);
 	printf("%d, ", fib2);
-	count = 2; /* fib1 and fib2 are already used */
+	count = 2;
 	while (count < num)
 	{
 		fib3 = fib1 + fib2;
