@@ -14,9 +14,11 @@ int main(void)
 	{
 		fib3 = fib1 + fib2;
 		count++;
-		printf("%d, ", fib3);
+		printf("%d", fib3);
 		fib1 = fib2;
 		fib2 = fib3;
+		if (count != 50)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);
