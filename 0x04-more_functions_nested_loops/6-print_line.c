@@ -1,22 +1,19 @@
 #include "main.h"
+
 /**
- * print_line - function that prints line for the times a number is
- * @n: parameter
- * Return: 0
+ * print_line - a function that draws a straight lines
+ * @n: number of dashes to print
+ * Return: has no return value
  */
+
 void print_line(int n)
 {
-	int a = 0;
+	int counter = 0;
 
-	if (n > 0)
+	while (n > 0 && counter < n)
 	{
-		while (a <= n)
-		{
-			_putchar('_');
-			a++;
-		}
-	 _putchar('\n');
+		_putchar('_');
+		counter++;
 	}
-	else
 	_putchar('\n');
 }
