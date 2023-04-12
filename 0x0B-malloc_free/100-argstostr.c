@@ -1,46 +1,39 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
 /**
-  * argstostr - concatenates all arguments
-  * @ac: no.of arguments
-  * @av: string of arguments
-  * Return: pointer to new string or null
-  */
+ * argstostr - concatenate all arguments
+ * @ac: no.of arguments
+ * @av: string of argument
+ * Return: pointer to new string if success or null otherwise
+ */
+
 char *argstostr(int ac, char **av)
 {
-	int i, j = 0, total_len = 0;
+	int i, j, r = 0, l = 0;
 	char *str;
-	char *arg;
 
 	if (ac == 0 || av == NULL)
-	{
-		return (NULL);
-	}
+	return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		arg = av[i];
-		while (*arg)
-		{
-			total_len++;
-			arg++;
-		}
-		total_len++;
+		for (j = 0; av[i][j]; j++)
+			l++;
 	}
-	str = malloc(sizeof(char) * total_len);
+	l += ac;
+	str = malloc(sizeof(char) * l + 1);
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	for (i = 0; i < ac; i++)
 	{
-		arg = av[i];
-		while (*arg)
+		for (j = 0; av[i][j]; j++)
 		{
-			str[j++] = *arg++;
+			str[r] = av[i][j];
+			r++;
 		}
-		str[j++] = '\n';
+		if (str[r] == '\0')
+		{
+			str[r++] = '\n';
+		}
 	}
-	str[j] = '\0';
 	return (str);
 }
