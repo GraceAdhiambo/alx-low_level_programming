@@ -10,12 +10,13 @@ int _strlen(char *str)
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
 	return (i);
 }
+
 /**
  * _strcpy - copies the string pointed to by src
  * including the terminating null byte (\0)
@@ -39,6 +40,7 @@ char *_strcpy(char *str1, char *str2)
 	str2[i] = '\0';
 	return (str2);
 }
+
 /**
  * new_dog - creates a new dog
  * @name: name of the dog
@@ -56,6 +58,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
+
 	dog->name = malloc(sizeof(char) * (len1 + 1));
 	if (dog->name == NULL)
 	{
@@ -71,6 +74,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	_strcpy(dog->name, name);
 	_strcpy(dog->owner, owner);
+
 	dog->age = age;
 	return (dog);
 }
